@@ -35,7 +35,7 @@
   <nav id="header" class="fixed w-full z-30 top-0 text-white">
     <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
       <div class="pl-4 flex items-center">
-        <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+        <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="./index.html">
           <!--Icon from: http://www.potlabicons.com/ -->
           <!-- <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
               <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502" transform="matrix(1,0,0,1,0,0)" />
@@ -45,11 +45,11 @@
               />
             </svg> -->
           <!-- LANDING -->
-          <div class="flex flex-row items-center">
+          <div class="flex flex-row items-center color: #000;">
             <img src="./assets/images/logo.png" alt="logo" class="h-8 fill-current inline w-32 h-32 bg-transparent" />
-            <div class="flex flex-col  items-center">
-              <h1 class="roboto-regular" style="font-size: 36px; font-weight: 500;">Tıkta Bul</h1>
-              <p class="roboto-regular" style="font-size: 18px;">Pasion</p>
+            <div class="flex flex-col  items-center color: #000;">
+              <div class="roboto-regular" style="font-size: 36px; font-weight: 500; color: #000;">Tıkta Bul</div>
+              <div class="roboto-regular" style="font-size: 18px; color: #000;">Pasion</div>
             </div>
           </div>
         </a>
@@ -68,20 +68,16 @@
         id="nav-content">
         <ul class="list-reset lg:flex justify-end flex-1 items-center">
           <li class="mr-3">
-            <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Active</a>
+            <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Ana Sayfa</a>
           </li>
           <li class="mr-3">
             <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-              href="#">link</a>
-          </li>
-          <li class="mr-3">
-            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-              href="#">link</a>
+              href="/randevu-al.html">Araç Tamir</a>
           </li>
         </ul>
-        <button id="navAction"
+        <button onclick="window.location.href='/randevu-al.html'" id="navAction"
           class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-          Action
+          Randevu Al
         </button>
       </div>
     </div>
@@ -105,9 +101,11 @@
         </div>
         <div class="relative text-white px-6 pb-6 mt-6">
           <div class="flex justify-between">
-            <button class="bg-white hover:bg-orange-500 text-black font-bold py-2 px-4 rounded-xl w-full ml-4 mr-4">
+            <button onclick="window.location.href='/randevu-al.html'"
+              class="bg-white hover:bg-orange-500 text-black font-bold py-2 px-4 rounded-xl w-full ml-4 mr-4">
               Araç Tamir
             </button>
+
           </div>
         </div>
       </div>
@@ -126,7 +124,8 @@
         </div>
         <div class="relative text-white px-6 pb-6 mt-6">
           <div class="flex justify-between">
-            <button class="bg-white hover:bg-orange-500 text-black font-bold py-2 px-4 rounded-xl w-full ml-4 mr-4">
+            <button onclick="window.location.href='/randevu-al.html'"
+              class="bg-white hover:bg-orange-500 text-black font-bold py-2 px-4 rounded-xl w-full ml-4 mr-4">
               Lojistic/Nakliyat
             </button>
           </div>
@@ -147,7 +146,8 @@
         </div>
         <div class="relative text-white px-6 pb-6 mt-6">
           <div class="flex justify-between">
-            <button class="bg-white hover:bg-orange-500 text-black font-bold py-2 px-4 rounded-xl w-full ml-4 mr-4">
+            <button onclick="window.location.href='/randevu-al.html'"
+              class="bg-white hover:bg-orange-500 text-black font-bold py-2 px-4 rounded-xl w-full ml-4 mr-4">
               Tadilat/Dekorasyon
             </button>
           </div>
@@ -216,7 +216,7 @@
               <img src="./assets/images/car.jpg" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
               <div class="px-4 py-3 w-72 text-center flex flex-row justify-center items-center">
                 <p class="text-2xl font-bold text-black truncate block capitalize mr-8">Araç</p>
-                <button
+                <button onclick="window.location.href='/randevu-al.html'"
                   class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                   <svg fill="#ffffff" width="25px" height="25px" version="1.1" id="Capa_1"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -242,7 +242,7 @@
               <div class="px-4 py-3 w-72 text-center flex flex-row  justify-center items-center">
                 <p class="text-2xl font-bold text-black truncate block capitalize mr-8">Lojistik</p>
 
-                <button
+                <button onclick="window.location.href='/randevu-al.html'"
                   class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                   <svg fill="#ffffff" width="25px" height="25px" version="1.1" id="Capa_1"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -268,8 +268,8 @@
               <img src="./assets//images/repair-2.avif" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
               <div class="px-4 py-3 w-72 text-center flex flex-row  justify-center items-center">
                 <p class="text-2xl font-bold text-black truncate block capitalize mr-8">Tadilat</p>
-                
-                <button
+
+                <button onclick="window.location.href='/randevu-al.html'"
                   class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                   <svg fill="#ffffff" width="25px" height="25px" version="1.1" id="Capa_1"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
