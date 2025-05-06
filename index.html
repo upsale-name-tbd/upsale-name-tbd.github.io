@@ -1,92 +1,248 @@
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Landing – Future of Finance</title>
+    <style>
+      /* Reset & allow page scroll */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="Entimox – The only 24/7 exchange" />
-    <meta property="og:description" content="US equities, commodities and FX pairs with up to 100x leverage." />
-    <meta property="og:url" content="https://pfex.io/" />
-    <meta property="og:image" content="https://pfex.io/logo.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:type" content="website" />
+      /* HERO */
+      #hero {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #fff;
+      }
+      #chart {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      #hero h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-size: 4rem;
+        color: rgba(0, 0, 0, 0.85);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        z-index: 2;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+      }
 
-    <!-- 2. (Optional) Twitter card support -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://pfex.io/logo.png" />
+      /* LOGIN BUTTON */
+      .login-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 3;
+        text-decoration: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        font-size: 1rem;
+        color: #131722;
+        background-color: #f0f3fa;
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+      .login-btn:hover {
+        background-color: #e0e3eb;
+      }
+      .login-btn:active {
+        background-color: #d1d4dc;
+      }
 
-    <link rel="preload" href="/_next/static/media/a34f9d1faa5f3315-s.p.woff2" as="font" crossorigin=""
-        type="font/woff2">
-    <!--<link rel="preload" as="image" href="/logo.svg" fetchpriority="high">-->
-    <link rel="stylesheet" href="index.css" data-precedence="next">
-    <link rel="preload" as="script" fetchpriority="low" href="/_next/static/chunks/webpack-b10e1bf7a5faa37c.js">
-    <script src="/_next/static/chunks/fd9d1056-749e5812300142af.js" async=""></script>
-    <script src="/_next/static/chunks/117-0f142ddaf3f3687e.js" async=""></script>
-    <script src="/_next/static/chunks/main-app-2dcde4753ea0d175.js" async=""></script>
-    <script src="/_next/static/chunks/609-93a81b4edf9df9f3.js" async=""></script>
-    <script src="/_next/static/chunks/app/page-a26611e72b1e70b1.js" async=""></script>
-    <title>Entimox</title>
-    <meta name="description" content="Futures that don't expire.">
-    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="48x48">
-    <link rel="icon" href="/icon.png?b8df269198464e08" type="image/png" sizes="96x96">
-    <link rel="apple-touch-icon" href="/apple-icon.png?3ed12014388230b7" type="image/png" sizes="180x180">
-    <meta name="next-size-adjust">
-    <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" nomodule=""></script>
-</head>
-
-<body class="__className_d65c78">
-    <div class="min-h-screen flex flex-col">
-        <main class="flex-1 flex flex-col md:flex-row">
-            <div
-                class="flex-1 md:w-1/2  text-black flex flex-col justify-center p-8 md:p-12 order-2 md:order-1">
-                <div class="w-full max-w-[460px] mx-auto md:ml-auto md:mr-0 space-y-6 text-center md:text-right">
-                    <div class="space-y-4">
-                        <p class="text-base md:text-lg">
-                            US equities, commodities and FX pairs with (or without) leverages of up to 100x. </p>
-                        <p class="text-base md:text-lg">
-                            Direct market access, seamless integration with traditional payment rails, and an offering of perpetual futures over all asset classes, trading has never been simpler or fairer than with Entimox.
-                        </p>
-                        <p class="text-base md:text-lg">
-                            Founded by Quants and Engineers from Citadel & Tower Research. Backed by Y Combinator.
-                        </p>
-                        <div class="logo-row">
-                                <img src="citadel.svg" alt="Citadel">
-                                <!-- <img src="tower.png" alt="Tower"> -->
-                                <img src="yc.png" alt="Y Combinator" class="yc-logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-black text-white flex-1 md:w-1/2 flex flex-col justify-center p-8 md:p-12 space-y-8 order-1 md:order-2">
-                <div class="w-full mx-auto md:mx-0 md:max-w-none space-y-8">
-                    <!--- TODO put logo here
-                    <div class="w-full max-w-[300px] mx-auto md:mx-0"><img
-                            alt="Entimox Logo-web-app-manifest-512x512" fetchpriority="high" width="300" height="107"
-                            decoding="async" data-nimg="1" class="w-full h-auto" style="color:transparent"
-                            src="/logo.svg"></div> -->
-                    <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-center md:text-left">The only 24/7 exchange</h1>
-                    <div
-                        class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a class="inline-flex bg-white text-black h-10 items-center justify-center rounded-full px-8 text-sm font-medium  transition-colors hover-black"
-                            href="https://app.entimox.com">Login</a>
-                    <div
-                        class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a class="inline-flex bg-white text-black h-10 items-center justify-center rounded-full px-8 text-sm font-medium  transition-colors"
-                            href="mailto:support@entimox.com">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer class="w-full bg-gray-100 py-4">
-            <div class="container text-center px-4">
-                <p class="text-sm text-gray-600">© <!-- -->2025<!-- --> Entimox. All rights reserved.</p>
-            </div>
-        </footer>
+      /* SCROLLABLE CONTENT */
+      #content {
+        padding: 60px 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+        font-family: sans-serif;
+      }
+      #content h2 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO WITH LIVE CHART -->
+    <div id="hero">
+      <a href="https://entimox.com" class="login-btn">Log In</a>
+      <div id="chart"></div>
+      <h1>The future of finance</h1>
     </div>
-    <script src="/_next/static/chunks/webpack-b10e1bf7a5faa37c.js" async=""></script>
-    <next-route-announcer style="position: absolute;"></next-route-announcer>
-</body>
 
+    <!-- BELOW-HERO SCROLLABLE TEXT -->
+    <section id="content">
+      <h2>Our Vision</h2>
+      <p>
+        We believe in an exchange built for everyone—transparent, fair, and
+        always on.
+      </p>
+      <h2>Features</h2>
+      <ul>
+        <li>24/7 market access with no forced expiries.</li>
+        <li>Low fees—what you see is what you pay.</li>
+        <li>Real‐time on‐chain settlement options.</li>
+      </ul>
+      <h2>Get Started</h2>
+      <p>
+        Sign up today to join our waitlist, explore demo trading, or dive into
+        our API docs.
+      </p>
+    </section>
+
+    <!-- CHART SCRIPT -->
+    <script type="module">
+      import {
+        createChart,
+        CandlestickSeries,
+        CrosshairMode,
+      } from "https://cdn.jsdelivr.net/npm/lightweight-charts@5.0.6/+esm";
+
+      // 1) Initialize chart with NO axes & NO crosshair
+      const container = document.getElementById("chart");
+      const chart = createChart(container, {
+        layout: {
+          background: { type: "solid", color: "white" },
+          textColor: "black",
+        },
+        rightPriceScale: { visible: false, borderVisible: false },
+        leftPriceScale: { visible: false },
+        timeScale: { visible: false, borderVisible: false, timeVisible: false },
+        grid: { vertLines: { visible: false }, horzLines: { visible: false } },
+        crosshair: {
+          mode: CrosshairMode.Normal,
+          vertLine: { visible: false },
+          horzLine: { visible: false },
+        },
+        handleScale: {
+          axisPressedMouseMove: false,
+          mouseWheel: false,
+          pinch: false,
+        },
+        handleScroll: {
+          mouseWheel: false,
+          pressedMouseMove: false,
+          horzTouchDrag: false,
+          vertTouchDrag: false,
+        },
+        width: container.clientWidth,
+        height: container.clientHeight,
+      });
+
+      // 2) Add your candlestick series
+      const series = chart.addSeries(CandlestickSeries, {
+        upColor: "#26a69a",
+        downColor: "#ef5350",
+        borderVisible: false,
+        wickUpColor: "#26a69a",
+        wickDownColor: "#ef5350",
+      });
+
+      // 3) Data generator (unchanged)
+      let randomFactor = 25 + Math.random() * 25;
+      const samplePoint = (i) =>
+        i *
+          (0.5 +
+            Math.sin(i / 1) * 0.2 +
+            Math.sin(i / 2) * 0.4 +
+            Math.sin(i / randomFactor) * 0.8 +
+            Math.sin(i / 50) * 0.5) +
+        200 +
+        i * 2;
+
+      function generateData(
+        numberOfCandles = 2500,
+        updatesPerCandle = 20,
+        startAt = 1000
+      ) {
+        const createCandle = (val, time) => ({
+          time,
+          open: val,
+          high: val,
+          low: val,
+          close: val,
+        });
+        const updateCandle = (candle, val) => ({
+          time: candle.time,
+          open: candle.open,
+          high: Math.max(candle.high, val),
+          low: Math.min(candle.low, val),
+          close: val,
+        });
+
+        randomFactor = 25 + Math.random() * 25;
+        const date = new Date();
+        date.setUTCHours(0, 0, 0, 0);
+        const total = numberOfCandles * updatesPerCandle;
+        const initialData = [];
+        const realtimeUpdates = [];
+        let lastCandle,
+          previousValue = samplePoint(-1);
+
+        for (let i = 0; i < total; i++) {
+          if (i % updatesPerCandle === 0)
+            date.setUTCDate(date.getUTCDate() + 1);
+          const time = date.getTime() / 1000;
+          let value =
+            previousValue + (samplePoint(i) - previousValue) * Math.random();
+          previousValue = value;
+
+          if (i % updatesPerCandle === 0) {
+            lastCandle = createCandle(value, time);
+            if (i >= startAt) realtimeUpdates.push(lastCandle);
+          } else {
+            lastCandle = updateCandle(lastCandle, value);
+            if (i >= startAt) realtimeUpdates.push(lastCandle);
+            else if ((i + 1) % updatesPerCandle === 0)
+              initialData.push(lastCandle);
+          }
+        }
+        return { initialData, realtimeUpdates };
+      }
+
+      // 4) Feed and fit
+      const data = generateData();
+      series.setData(data.initialData);
+      chart.timeScale().fitContent();
+      chart.timeScale().scrollToRealTime();
+
+      // 5) (optional) live‐stream
+      (function stream() {
+        const gen = (function* () {
+          yield* data.realtimeUpdates;
+        })();
+        const iv = setInterval(() => {
+          const next = gen.next();
+          if (next.done) return clearInterval(iv);
+          series.update(next.value);
+        }, 100);
+      })();
+
+      // 6) Handle resize
+      window.addEventListener("resize", () => {
+        chart.applyOptions({
+          width: container.clientWidth,
+          height: container.clientHeight,
+        });
+      });
+    </script>
+  </body>
 </html>
