@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Landing – Future of Finance</title>
+    <!-- Poppins for everything -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      /* Reset & allow page scroll */
-      html,
-      body {
+      /* Reset & globals */
+      * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
+      }
+      html,
+      body {
+        font-family: "Poppins", sans-serif;
       }
 
       /* HERO */
@@ -33,82 +44,282 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        margin: 0;
-        font-size: 4rem;
         color: rgba(0, 0, 0, 0.85);
+        font-size: 4rem;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         z-index: 2;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
       }
-
-      /* LOGIN BUTTON */
-      .login-btn {
+      .top-links {
         position: absolute;
         top: 20px;
         right: 20px;
+        display: flex;
+        gap: 12px;
         z-index: 3;
+      }
+      .top-links a {
         text-decoration: none;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
         font-size: 1rem;
         color: #131722;
-        background-color: #f0f3fa;
+        background: #f0f3fa;
         padding: 8px 16px;
         border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: background 0.2s;
       }
-      .login-btn:hover {
-        background-color: #e0e3eb;
+      .top-links a:hover {
+        background: #e0e3eb;
       }
-      .login-btn:active {
-        background-color: #d1d4dc;
+      .top-links a:active {
+        background: #d1d4dc;
       }
+      html
+Copy
 
-      /* SCROLLABLE CONTENT */
+
+      /* MAIN CONTENT - SECTION 1 */
       #content {
-        padding: 60px 20px;
         max-width: 800px;
         margin: 0 auto;
+        padding: 60px 20px;
         line-height: 1.6;
-        font-family: sans-serif;
       }
       #content h2 {
-        margin-top: 0;
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+      #content p,
+      #content ul {
+        margin-bottom: 24px;
+        color: #333;
+      }
+      #content ul {
+        list-style: disc inside;
+      }
+
+      /* separator */
+      #content {
+        border-bottom: 1px solid #ddd;
+      }
+
+      /* JOIN SECTION - SECTION 2 */
+      #join {
+        background: rgb(242, 242, 242);
+        padding: 60px 20px;
+      }
+      #join .section-inner {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      #join h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+      }
+
+      /* DESKTOP TABS & CONTENT */
+      #trader-wrapper {
+        display: flex;
+        gap: 0;
+      }
+      #trader-tabs {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        border-right: 2px solid #000;
+        min-width: 200px;
+      }
+      .tab {
+        padding: 16px 24px;
+        cursor: pointer;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.6);
+        border-left: 4px solid transparent;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .tab.active {
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+        border-left-color: #000;
+      }
+      #trader-content {
+        flex: 1;
+        padding: 24px;
+        background: #fafafb;
+      }
+
+      /* MOBILE ACCORDION */
+      #trader-accordion {
+        display: none;
+      }
+      .accordion-item {
+        border-top: 1px solid #ccc;
+      }
+      .accordion-header {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.25rem;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.6);
+        transition: color 0.2s;
+      }
+      .accordion-header.active {
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+      }
+      .accordion-panel {
+        display: none;
+        padding: 0 16px 16px;
+        background: #fafafb;
+      }
+      .accordion-item.active .accordion-panel {
+        display: block;
+      }
+
+      /* SECTION 3: FUTURE ILLUSTRATION */
+      #future {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        text-align: center;
+      }
+      #future h2 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+      #future p {
+        margin-bottom: 24px;
+        color: #333;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      /* RESPONSIVE SWITCH */
+      @media (max-width: 768px) {
+        #trader-wrapper {
+          display: none;
+        }
+        #trader-accordion {
+          display: block;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- HERO WITH LIVE CHART -->
+    <!-- HERO -->
     <div id="hero">
-      <a href="https://entimox.com" class="login-btn">Log In</a>
+      <div class="top-links">
+        <a href="https://status.entimox.com" target="_blank">Status</a>
+        <a href="https://app.entimox.com">Log In</a>
+      </div>
       <div id="chart"></div>
       <h1>The future of finance</h1>
     </div>
 
-    <!-- BELOW-HERO SCROLLABLE TEXT -->
-    <section id="content">
+    <!-- SECTION 1: your core copy -->
+    <!-- <section id="content">
       <h2>Our Vision</h2>
       <p>
         We believe in an exchange built for everyone—transparent, fair, and
         always on.
       </p>
+
       <h2>Features</h2>
       <ul>
         <li>24/7 market access with no forced expiries.</li>
         <li>Low fees—what you see is what you pay.</li>
         <li>Real‐time on‐chain settlement options.</li>
       </ul>
+
       <h2>Get Started</h2>
       <p>
         Sign up today to join our waitlist, explore demo trading, or dive into
         our API docs.
       </p>
+    </section> -->
+
+    <!-- SECTION 2: Join the future -->
+    <section id="join">
+      <div class="section-inner">
+        <h2>Join the future of trading</h2>
+
+        <!-- DESKTOP: tabs + panel -->
+        <div id="trader-wrapper">
+          <div id="trader-tabs">
+            <div class="tab" data-tab="new">New traders</div>
+            <div class="tab" data-tab="experienced">Experienced traders</div>
+            <div class="tab" data-tab="institutional">
+              Institutional traders
+            </div>
+          </div>
+          <div id="trader-content"></div>
+        </div>
+
+        <!-- MOBILE: accordion -->
+        <div id="trader-accordion">
+          <div class="accordion-item active" data-acc="new">
+            <button class="accordion-header active">New traders</button>
+            <div class="accordion-panel">
+              <h3>Easy On‑Ramp</h3>
+              <p>
+                Sign up in three minutes, deposit with any card, and start
+                trading with $1.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item" data-acc="experienced">
+            <button class="accordion-header">Experienced traders</button>
+            <div class="accordion-panel">
+              <h3>Advanced Tools</h3>
+              <p>
+                Access in‑depth charts, customizable indicators, and reduced
+                fees for high‑volume trading.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item" data-acc="institutional">
+            <button class="accordion-header">Institutional traders</button>
+            <div class="accordion-panel">
+              <h3>Institutional Grade</h3>
+              <p>
+                Aggregated liquidity, API access, and bespoke risk‑management
+                tools for large desks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CHART SCRIPT -->
+    <!-- SECTION 3: FUTURE ILLUSTRATION -->
+    <section id="future">
+      <h2>The future of futures</h2>
+      <p>
+        Entimox is the next evolution of markets, running an exchange the way it
+        should be.
+      </p>
+      <div class="image-container">
+        <img src="./perpetuals.png" alt="Perpetuals Illustration" />
+      </div>
+    </section>
+
+    <footer
+      style="
+        text-align: center;
+        padding: 20px;
+        color: #666;
+        font-size: 0.875rem;
+      "
+    >
+      &copy; Entimox 2025
+    </footer>
+    <!-- CHART & INTERACTIONS -->
     <script type="module">
       import {
         createChart,
@@ -116,7 +327,7 @@
         CrosshairMode,
       } from "https://cdn.jsdelivr.net/npm/lightweight-charts@5.0.6/+esm";
 
-      // 1) Initialize chart with NO axes & NO crosshair
+      // Chart setup (axes & hover off)
       const container = document.getElementById("chart");
       const chart = createChart(container, {
         layout: {
@@ -146,8 +357,6 @@
         width: container.clientWidth,
         height: container.clientHeight,
       });
-
-      // 2) Add your candlestick series
       const series = chart.addSeries(CandlestickSeries, {
         upColor: "#26a69a",
         downColor: "#ef5350",
@@ -156,7 +365,7 @@
         wickDownColor: "#ef5350",
       });
 
-      // 3) Data generator (unchanged)
+      // Original data generator & streaming
       let randomFactor = 25 + Math.random() * 25;
       const samplePoint = (i) =>
         i *
@@ -168,80 +377,93 @@
         200 +
         i * 2;
 
-      function generateData(
-        numberOfCandles = 2500,
-        updatesPerCandle = 20,
-        startAt = 1000
-      ) {
-        const createCandle = (val, time) => ({
-          time,
-          open: val,
-          high: val,
-          low: val,
-          close: val,
+      function generateData(n = 2500, u = 20, start = 1000) {
+        const createCandle = (v, t) => ({
+          time: t,
+          open: v,
+          high: v,
+          low: v,
+          close: v,
         });
-        const updateCandle = (candle, val) => ({
-          time: candle.time,
-          open: candle.open,
-          high: Math.max(candle.high, val),
-          low: Math.min(candle.low, val),
-          close: val,
+        const updateCandle = (c, v) => ({
+          time: c.time,
+          open: c.open,
+          high: Math.max(c.high, v),
+          low: Math.min(c.low, v),
+          close: v,
         });
-
         randomFactor = 25 + Math.random() * 25;
         const date = new Date();
         date.setUTCHours(0, 0, 0, 0);
-        const total = numberOfCandles * updatesPerCandle;
-        const initialData = [];
-        const realtimeUpdates = [];
-        let lastCandle,
-          previousValue = samplePoint(-1);
-
+        const total = n * u,
+          init = [],
+          live = [];
+        let last,
+          prev = samplePoint(-1);
         for (let i = 0; i < total; i++) {
-          if (i % updatesPerCandle === 0)
-            date.setUTCDate(date.getUTCDate() + 1);
-          const time = date.getTime() / 1000;
-          let value =
-            previousValue + (samplePoint(i) - previousValue) * Math.random();
-          previousValue = value;
-
-          if (i % updatesPerCandle === 0) {
-            lastCandle = createCandle(value, time);
-            if (i >= startAt) realtimeUpdates.push(lastCandle);
+          if (i % u === 0) date.setUTCDate(date.getUTCDate() + 1);
+          const t = date.getTime() / 1000;
+          const val = prev + (samplePoint(i) - prev) * Math.random();
+          prev = val;
+          if (i % u === 0) {
+            last = createCandle(val, t);
+            if (i >= start) live.push(last);
           } else {
-            lastCandle = updateCandle(lastCandle, value);
-            if (i >= startAt) realtimeUpdates.push(lastCandle);
-            else if ((i + 1) % updatesPerCandle === 0)
-              initialData.push(lastCandle);
+            last = updateCandle(last, val);
+            if (i >= start) live.push(last);
+            else if ((i + 1) % u === 0) init.push(last);
           }
         }
-        return { initialData, realtimeUpdates };
+        return { initialData: init, realtimeUpdates: live };
       }
 
-      // 4) Feed and fit
       const data = generateData();
       series.setData(data.initialData);
       chart.timeScale().fitContent();
       chart.timeScale().scrollToRealTime();
-
-      // 5) (optional) live‐stream
-      (function stream() {
-        const gen = (function* () {
-          yield* data.realtimeUpdates;
-        })();
+      (() => {
+        const it = data.realtimeUpdates[Symbol.iterator]();
         const iv = setInterval(() => {
-          const next = gen.next();
-          if (next.done) return clearInterval(iv);
-          series.update(next.value);
+          const n = it.next();
+          if (n.done) return clearInterval(iv);
+          series.update(n.value);
         }, 100);
       })();
 
-      // 6) Handle resize
       window.addEventListener("resize", () => {
         chart.applyOptions({
           width: container.clientWidth,
           height: container.clientHeight,
         });
+      });
+
+      // Tab logic
+      const tabs = document.querySelectorAll("#trader-tabs .tab");
+      const panel = document.getElementById("trader-content");
+      const tabText = {
+        new: "<h3>Easy On‑Ramp</h3><p>Sign up in three minutes…</p>",
+        experienced: "<h3>Advanced Tools</h3><p>Access in‑depth charts…</p>",
+        institutional:
+          "<h3>Institutional Grade</h3><p>Aggregated liquidity…</p>",
+      };
+      function activateTab(k) {
+        tabs.forEach((t) => t.classList.toggle("active", t.dataset.tab === k));
+        panel.innerHTML = tabText[k];
+      }
+      activateTab("new");
+      tabs.forEach((t) =>
+        t.addEventListener("click", () => activateTab(t.dataset.tab))
+      );
+
+      // Accordion logic
+      document.querySelectorAll(".accordion-item").forEach((item) => {
+        item.querySelector(".accordion-header").onclick = () => {
+          const open = item.classList.contains("active");
+          document
+            .querySelectorAll(".accordion-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!open) item.classList.add("active");
+        };
       });
     </script>
   </body>
